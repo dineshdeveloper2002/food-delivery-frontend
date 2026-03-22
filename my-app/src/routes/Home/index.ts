@@ -6,5 +6,6 @@ export const homeRoutes: renderRouteProps[] = [
         path: '/home',
         element: lazy(() => import('@container/pages/homePage')),
         title: 'home page',
+        layout: 'app',  // With navbar
     }
 ]
