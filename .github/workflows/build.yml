@@ -1,0 +1,9 @@
+name: Food-delivery
+on: workflow_dispatch
+jobs:
+  food-build:
+    runs-on: windows-latest
+    steps:
+      - name: Execute the build
+        run: echo "HEllo world "
+    
