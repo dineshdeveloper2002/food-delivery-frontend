@@ -1,0 +1,6 @@
+name: workflow-trigger
+on: push
+jobs:
+ pushrun:
+   runs-on: ubuntu-latest
+    
