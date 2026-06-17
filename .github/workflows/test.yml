@@ -1,6 +1,12 @@
 name: workflow-trigger
-on: push
+on:
+  push:
 jobs:
- pushrun:
-   runs-on: ubuntu-latest
+ test:
+  runs-on: ubuntu-latest
+  steps:
+    - name: log check
+      run: 'echo print hello world'
+    
+      
     
