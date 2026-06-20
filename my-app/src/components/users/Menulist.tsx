@@ -4,7 +4,7 @@ export const Menulist = () => {
     return (
         <Box sx={{ width: '30px', backgroundColor: 'grey' }}>
             <li>
-                Edited now and replaced
+                Edited test data and commited
             </li>
         </Box>
     )
