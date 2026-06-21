@@ -7,15 +7,26 @@ jobs:
   steps:
     - name: Build started
       run: 'echo Execution started'
-      
+
     - name: checkout
       uses: actions/checkout@v3
  webpackcompilation:
    needs: buildcheck
    runs-on: ubuntu-latest
    steps:
+     - name: checkout code
+       uses: actions/checkout@v3
+
+     - name: setup node
+       uses: actions/setup-node@v6
+       with:
+         node-version: 20
+       
+     - name: install dependencies
+       run: npm install
+    
      - name: Build compilation
-       run: 'echo npm run build ${{runner}}'
+       run: npm run build
    
     
     
