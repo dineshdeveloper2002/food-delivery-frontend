@@ -13,6 +13,10 @@ jobs:
  webpackcompilation:
    needs: buildcheck
    runs-on: ubuntu-latest
+
+   defaults:
+     run:
+       working-directory: my-app
    steps:
      - name: checkout code
        uses: actions/checkout@v3
