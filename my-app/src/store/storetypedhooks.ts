@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from './AppStore';
+import type { RootState, AppDispatch } from './appStore';
 import { AsyncThunk, AsyncThunkOptions, AsyncThunkPayloadCreator, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();

@@ -1,6 +1,6 @@
 import { loginService } from "@container/service/loginService";
 import { createAppAsyncThunk } from "../storetypedhooks";
-import { setLoginStatus } from "./LoginStoreSlice";
+import { setLoginStatus } from "./loginStoreSlice";
 
 export const login = createAppAsyncThunk<any, {}>('login-user', async (data, { dispatch }) => {
 

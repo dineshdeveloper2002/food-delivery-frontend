@@ -1,44 +1,39 @@
 name: workflow-trigger
 on:
   pull_request:
-    branches: [main,fooddev]
-    types: [opened,reopened]        
-  
+    branches: [main, fooddev]
+    types: [opened, reopened, closed]
+
 jobs:
- buildcheck:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Build started
-      run: 'echo Execution started'
+  buildcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build started
+        run: "echo Execution started"
 
-    - name: checkout
-      uses: actions/checkout@v3
- webpackcompilation:
-   needs: buildcheck
-   runs-on: ubuntu-latest
+      - name: checkout
+        uses: actions/checkout@v3
+  webpackcompilation:
+    needs: buildcheck
+    runs-on: ubuntu-latest
 
-   defaults:
-     run:
-       working-directory: my-app
-   steps:
-     - name: checkout code
-       uses: actions/checkout@v3
+    defaults:
+      run:
+        working-directory: my-app
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
 
-     - name: check path
-       run: pwd
+      - name: check path
+        run: pwd
 
-     - name: setup node
-       uses: actions/setup-node@v6
-       with:
-         node-version: 20
-       
-     - name: install dependencies
-       run: npm install
-    
-     - name: Build compilation
-       run: npm run build
-   
-    
-    
-      
-    
+      - name: setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+
+      - name: install dependencies
+        run: npm install
+
+      - name: Build compilation
+        run: npm run build
