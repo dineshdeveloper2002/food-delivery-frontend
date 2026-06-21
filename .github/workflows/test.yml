@@ -1,6 +1,9 @@
 name: workflow-trigger
 on:
-  push:
+  pull_request:
+    branches: [main,fooddev]
+    types: [opened,reopened]        
+  
 jobs:
  buildcheck:
   runs-on: ubuntu-latest
