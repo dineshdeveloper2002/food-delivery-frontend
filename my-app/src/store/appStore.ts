@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import LoginStoreSlice from "./login/LoginStoreSlice";
+import loginStoreSlice from "./login/loginStoreSlice";
 import { useStore } from 'react-redux';
 import HomeStoreSlice from "./home/HomeStoreSlice";
 import UserStoreSlice from "./user/UserStoreSlice";
 
 export const Store = configureStore({
     reducer: {
-        logIn: LoginStoreSlice,
+        logIn: loginStoreSlice,
         Home: HomeStoreSlice,
         User: UserStoreSlice
     }

@@ -1,6 +1,6 @@
-import { password, username, status } from "@container/store/login/LoginStoreSelectors";
-import { setUserName, setUserPassword } from "@container/store/login/LoginStoreSlice";
-import { login } from "@container/store/login/LoginStoreThunk";
+import { password, username, status } from "@container/store/login/loginStoreSelectors";
+import { setUserName, setUserPassword } from "@container/store/login/loginStoreSlice";
+import { login } from "@container/store/login/loginStoreThunk";
 import { useAppDispatch, useAppSelector } from "@container/store/storetypedhooks";
 import { Box, Card, CardContent, TextField, Button, Typography, Grid } from "@mui/material";
 import { useEffect, useState } from "react";

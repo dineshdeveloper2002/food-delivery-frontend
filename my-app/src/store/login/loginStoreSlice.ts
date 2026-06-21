@@ -6,7 +6,7 @@ export const loginStore: any = {
     status: false
 }
 
-const LoginStoreSlice = createSlice({
+const loginStoreSlice = createSlice({
     name: 'loginStore',
     initialState: loginStore,
     reducers: {
@@ -22,6 +22,6 @@ const LoginStoreSlice = createSlice({
     }
 })
 
-export default LoginStoreSlice.reducer;
+export default loginStoreSlice.reducer;
 
-export const { setUserName, setUserPassword, setLoginStatus } = LoginStoreSlice.actions;
+export const { setUserName, setUserPassword, setLoginStatus } = loginStoreSlice.actions;

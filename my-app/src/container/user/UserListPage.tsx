@@ -21,7 +21,7 @@ import { dialog, userVo } from "@container/store/user/UserStoreSelector";
 import { setDialog, setUserVO } from "@container/store/user/UserStoreSlice";
 import { useEffect, useRef, useState } from "react";
 import { updateUserVO, userVO } from "@container/interfaces/userVO";
-import { login } from "@container/store/login/LoginStoreThunk";
+import { login } from "@container/store/login/loginStoreThunk";
 import { getuserThunk, userThunk, userUpdateThunk } from "@container/store/user/UserStoreThunk";
 import { DeleteOutline, MoreVertOutlined, TextFieldsOutlined } from "@mui/icons-material";
 

@@ -1,4 +1,4 @@
-import { RootState } from "../AppStore";
+import { RootState } from "../appStore";
 
 export const username = (state: RootState) => state.logIn.username;
 export const password = (state: RootState) => state.logIn.password;
