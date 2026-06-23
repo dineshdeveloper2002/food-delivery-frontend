@@ -7,6 +7,7 @@ env:
 jobs:
   buildcheck:
     runs-on: ubuntu-latest
+    environment: staging
     env:
       PORT: 8080
     steps:
@@ -14,3 +15,12 @@ jobs:
         run: "echo test data ${{env.mongoDB}}"
       - name: test data
         run: "echo test $PORT"
+
+      - name: Secret Manger env-run
+        run: "echo ${env.MONGO_CLUSTER}"
+  compilationdata:
+    runs-on: ubuntu-latest
+    environment: dev1
+    steps:
+      - name: dev data
+        run: "echo ${env.MONGO_CLUSTER}"
