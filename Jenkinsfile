@@ -1,30 +1,40 @@
 pipeline{
-    agent{
-        any
-    }
-    parameters{
+    agent any
+   
+    parameters {
         choice(
-            name:'environment'
-            choices:[
-                'staging',
-                'qa',
-                'prod'
+            name: 'BASE_URL',
+            choices: [
+                'https://staging.rfpio.com/',
+                'https://pre-release.rfpio.com/',
+                'https://hotfix.rfpio.com/',
+                'https://dev1.rfpio.com/',
+                'https://app.rfpio.com/',
+                'https://qa.rfpio.com/',
+                'https://sb01.rfpio.com/',
+                'https://oci-sb.rfpio.com/',
+                'https://google-sb.rfpio.com/',
+                'https://ms-sb.rfpio.com/'
             ],
-            description:'Used for changing env'
-        )
-        string(
-            name:'worker_count',
-            defaultValue:'10',
-            description:'parallel worker list'
+            description: 'Select the environment to run tests against'
         )
     }
+
     stages{
-        stage('environment file setup'){
+        stage('checkout code'){
             steps{
-                scripts{
-                def worker = "${params.worker_count}"
-                "echo ${params.worker_count}"
-                }
+                 checkout scm
+            }
+        }
+        stage('create env file'){
+            steps{
+                script {
+                    writeFile file: '.env', text:"""
+                    COMPANY_ID: 1234
+                    BASE_URL:${params.BASE_URL}
+
+                    """
+                }   
             }
         }
     }
