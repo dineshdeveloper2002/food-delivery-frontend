@@ -47,9 +47,13 @@ pipeline{
                 }   
             }
         }
+
+      
          stage('run test'){
-            steps{
-                  bat 'npx playwright test'
+             steps {
+                dir('playwright_framework') {
+                bat 'npx playwright test'
+                }
             }
         }
 
