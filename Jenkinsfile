@@ -47,6 +47,11 @@ pipeline{
                 }   
             }
         }
+         stage('run test'){
+            steps{
+                  bat 'npx playwright test'
+            }
+        }
 
     }
 }
