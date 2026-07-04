@@ -38,6 +38,7 @@ pipeline{
 
         stage('create env file'){
             steps{
+                    dir('playwright_framework'){
                 script {
                     writeFile file: '.env', text:"""
                     COMPANY_ID: 1234
@@ -45,6 +46,7 @@ pipeline{
 
                     """
                 }   
+                    }
             }
         }
 
