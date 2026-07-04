@@ -14,7 +14,8 @@ pipeline{
                 'https://sb01.rfpio.com/',
                 'https://oci-sb.rfpio.com/',
                 'https://google-sb.rfpio.com/',
-                'https://ms-sb.rfpio.com/'
+                'https://ms-sb.rfpio.com/',
+                'https://playwright.dev/'
             ],
             description: 'Select the environment to run tests against'
         )
