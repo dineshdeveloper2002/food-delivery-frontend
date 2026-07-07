@@ -1,8 +1,6 @@
 name: workflow-trigger
 on:
-  pull_request:
-    branches: [main, fooddev]
-    types: [opened, reopened, closed]
+  push: 
 
 jobs:
   buildcheck:
